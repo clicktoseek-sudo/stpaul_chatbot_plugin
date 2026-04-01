@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saint Paul's School, Jalpaiguri – Affiliated to CISCE, New Delhi</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  background: #f0f0f0;
+  color: #333;
+}
+
+a { color: #003087; text-decoration: none; }
+a:hover { text-decoration: underline; color: #cc0000; }
+
+/* TOP BAR */
+.top-bar {
+  background: #003087;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-bar a { color: #FFD700; font-size: 12px; }
+
+/* MARQUEE */
+.marquee-wrap {
+  background: #cc0000;
+  padding: 5px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee-inner {
+  display: inline-block;
+  animation: marquee 35s linear infinite;
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: bold;
+  padding-right: 60px;
+}
+@keyframes marquee {
+  0%   { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(to bottom, #ffffff 0%, #dce8f5 100%);
+  border-bottom: 3px solid #003087;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.logo-img {
+  width: 95px;
+  height: 95px;
+  border: 3px solid #003087;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  flex-shrink: 0;
+}
+.logo-img .cross { font-size: 30px; color: #cc0000; }
+.logo-img .lname { font-size: 8px; color: #003087; font-weight: bold; text-align: center; line-height: 1.3; margin-top: 2px; }
+.school-title { flex: 1; }
+.school-title h1 {
+  font-size: 26px;
+  color: #003087;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.school-title h2 {
+  font-size: 13px;
+  color: #cc0000;
+  font-weight: normal;
+  margin-top: 3px;
+  font-style: italic;
+}
+.school-title p {
+  font-size: 11.5px;
+  color: #555;
+  margin-top: 4px;
+}
+.school-title .motto {
+  font-size: 13px;
+  color: #003087;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 3px;
+}
+.header-right {
+  text-align: right;
+  font-size: 12px;
+  color: #333;
+  line-height: 1.8;
+}
+.header-right strong { color: #003087; }
+
+/* NAV */
+nav {
+  background: linear-gradient(to bottom, #003087 0%, #001f5b 100%);
+  border-bottom: 2px solid #FFD700;
+}
+.nav-inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+nav a {
+  color: #fff;
+  padding: 9px 14px;
+  font-size: 13px;
+  display: block;
+  border-right: 1px solid rgba(255,255,255,0.15);
+  font-weight: bold;
+  transition: background 0.2s;
+}
+nav a:hover, nav a.active {
+  background: #cc0000;
+  text-decoration: none;
+  color: #FFD700;
+}
+
+/* MAIN LAYOUT */
+.main-wrap {
+  display: flex;
+  gap: 0;
+  max-width: 1100px;
+  margin: 10px auto;
+  padding: 0 8px;
+}
+
+/* LEFT SIDEBAR */
+.sidebar-left {
+  width: 190px;
+  flex-shrink: 0;
+}
+.sidebar-box {
+  background: #fff;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+.sidebar-box .box-title {
+  background: linear-gradient(to bottom, #003087, #001f5b);
+  color: #FFD700;
+  padding: 7px 10px;
+  font-size: 13px;
+  font-weight: bold;
+  border-bottom: 2px solid #cc0000;
+}
+.sidebar-box ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar-box ul li {
+  border-bottom: 1px solid #eee;
+}
+.sidebar-box ul li a {
+  display: block;
+  padding: 6px 10px;
+  font-size: 12.5px;
+  color: #003087;
+}
+.sidebar-box ul li a:before {
+  content: "▶ ";
+  font-size: 9px;
+  color: #cc0000;
+}
+.sidebar-box ul li a:hover {
+  background: #e8f0fb;
+  text-decoration: none;
+}
+.sidebar-box .notice-item {
+  padding: 7px 10px;
+  font-size: 12px;
+  border-bottom: 1px dashed #ccc;
+  color: #333;
+  line-height: 1.5;
+}
+.sidebar-box .notice-item span {
+  color: #cc0000;
+  font-weight: bold;
+}
+.counter-box {
+  text-align: center;
+  padding: 10px;
+}
+.counter-box .count-num {
+  font-size: 28px;
+  font-weight: bold;
+  color: #cc0000;
+}
+.counter-box .count-label {
+  font-size: 11px;
+  color: #555;
+}
+
+/* CENTRE CONTENT */
+.centre {
+  flex: 1;
+  margin: 0 10px;
+}
+
+/* SLIDER */
+.slider-wrap {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  border: 2px solid #003087;
+  margin-bottom: 10px;
+}
+.slider-slides { display: flex; height: 100%; transition: transform 0.6s ease; }
+.slide {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.slide-1 { background: linear-gradient(135deg, #003087 0%, #001f5b 100%); }
+.slide-2 { background: linear-gradient(135deg, #8B0000 0%, #cc0000 100%); }
+.slide-3 { background: linear-gradient(135deg, #1a5c1a 0%, #2e8b2e 100%); }
+.slide-4 { background: linear-gradient(135deg, #5c4400 0%, #8B6914 100%); }
+.slide-icon { font-size: 60px; }
+.slide-text { text-align: center; padding: 0 20px; font-size: 18px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+.slide-sub { font-size: 13px; font-weight: normal; opacity: 0.9; }
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 10;
+}
+.slider-btn.prev { left: 5px; }
+.slider-btn.next { right: 5px; }
+.slider-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex; gap: 6px;
+}
+.dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+}
+.dot.active { background: #FFD700; }
+
+/* CONTENT BOXES */
+.content-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.content-box {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+.content-box .box-title {
+  background: linear-gradient(to bottom, #003087, #001f5b);
+  color: #FFD700;
+  padding: 7px 10px;
+  font-size: 13px;
+  font-weight: bold;
+  border-bottom: 2px solid #cc0000;
+}
+.content-box .box-body {
+  padding: 10px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #333;
+}
+.content-box .box-body p { margin-bottom: 8px; }
+.content-box .box-body ul { padding-left: 18px; }
+.content-box .box-body ul li { margin-bottom: 4px; }
+.content-box.full { flex: 100%; }
+
+/* FULL WIDTH BOX */
+.full-box {
+  background: #fff;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+.full-box .box-title {
+  background: linear-gradient(to bottom, #003087, #001f5b);
+  color: #FFD700;
+  padding: 7px 10px;
+  font-size: 13px;
+  font-weight: bold;
+  border-bottom: 2px solid #cc0000;
+}
+.full-box .box-body {
+  padding: 10px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* PRINCIPAL MSG */
+.principal-msg {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.principal-photo {
+  width: 90px;
+  height: 110px;
+  background: linear-gradient(135deg, #003087, #001f5b);
+  border: 2px solid #003087;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 11px;
+  text-align: center;
+}
+.principal-photo .avatar { font-size: 40px; }
+
+/* PHOTO GALLERY */
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px;
+}
+.gallery-item {
+  width: calc(25% - 5px);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.gallery-item:hover { transform: scale(1.05); }
+.gi-1 { background: linear-gradient(135deg, #e8f0fb, #c5d9f5); }
+.gi-2 { background: linear-gradient(135deg, #fde8e8, #f5c5c5); }
+.gi-3 { background: linear-gradient(135deg, #e8fbe8, #c5f5c5); }
+.gi-4 { background: linear-gradient(135deg, #fbf5e8, #f5e8c5); }
+.gi-5 { background: linear-gradient(135deg, #f5e8fb, #e8c5f5); }
+.gi-6 { background: linear-gradient(135deg, #e8fbfb, #c5f5f5); }
+.gi-7 { background: linear-gradient(135deg, #fbfbe8, #f5f5c5); }
+.gi-8 { background: linear-gradient(135deg, #fbe8f5, #f5c5e8); }
+
+/* STATS ROW */
+.stats-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.stat-box {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 12px 8px;
+}
+.stat-box .snum {
+  font-size: 26px;
+  font-weight: bold;
+  color: #cc0000;
+  font-family: 'Times New Roman', serif;
+}
+.stat-box .slabel {
+  font-size: 11px;
+  color: #555;
+  margin-top: 3px;
+  line-height: 1.3;
+}
+.stat-box .sicon { font-size: 22px; margin-bottom: 4px; }
+
+/* RIGHT SIDEBAR */
+.sidebar-right {
+  width: 185px;
+  flex-shrink: 0;
+}
+.event-item {
+  padding: 7px 10px;
+  border-bottom: 1px dashed #ccc;
+  font-size: 12px;
+}
+.event-item .ev-date {
+  background: #cc0000;
+  color: #fff;
+  padding: 1px 5px;
+  font-size: 11px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-bottom: 3px;
+}
+.event-item .ev-title { font-weight: bold; color: #003087; }
+
+.social-links { padding: 10px; display: flex; flex-direction: column; gap: 6px; }
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 3px;
+  font-size: 12.5px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+.social-btn:hover { opacity: 0.9; text-decoration: none; color: #fff; }
+.fb { background: #1877F2; }
+.yt { background: #FF0000; }
+.wa { background: #25D366; }
+
+.quicklink-grid { padding: 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.ql-item {
+  background: #e8f0fb;
+  border: 1px solid #b0c8f0;
+  text-align: center;
+  padding: 8px 4px;
+  font-size: 11px;
+  color: #003087;
+  border-radius: 3px;
+  cursor: pointer;
+  line-height: 1.4;
+}
+.ql-item .ql-icon { font-size: 20px; display: block; margin-bottom: 3px; }
+.ql-item:hover { background: #003087; color: #fff; }
+
+/* FOOTER */
+footer {
+  background: linear-gradient(to bottom, #003087, #001444);
+  color: #ccc;
+  margin-top: 15px;
+  padding: 20px 15px 10px;
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+.footer-col { flex: 1; min-width: 160px; }
+.footer-col h4 {
+  color: #FFD700;
+  font-size: 13px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #FFD700;
+  padding-bottom: 4px;
+}
+.footer-col p, .footer-col li {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #bbb;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li:before { content: "› "; color: #FFD700; }
+.footer-col a { color: #aaa; }
+.footer-col a:hover { color: #FFD700; }
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 10px;
+  font-size: 11px;
+  color: #888;
+}
+
+/* ===== PAULY AI CHATBOT ===== */
+#pauly-toggle {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #003087, #001f5b);
+  border-radius: 50%;
+  border: 3px solid #FFD700;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+  z-index: 9998;
+  transition: transform 0.2s;
+  animation: pulse-ring 2.5s ease infinite;
+}
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(0,48,135,0.5), 0 4px 18px rgba(0,0,0,0.35); }
+  70%  { box-shadow: 0 0 0 12px rgba(0,48,135,0), 0 4px 18px rgba(0,0,0,0.35); }
+  100% { box-shadow: 0 0 0 0 rgba(0,48,135,0), 0 4px 18px rgba(0,0,0,0.35); }
+}
+#pauly-toggle:hover { transform: scale(1.08); }
+#pauly-toggle .bot-icon { font-size: 24px; }
+#pauly-toggle .bot-label { font-size: 9px; color: #FFD700; font-weight: bold; line-height: 1; margin-top: 1px; }
+.pauly-badge {
+  position: absolute;
+  top: -4px; right: -4px;
+  background: #cc0000;
+  color: #fff;
+  font-size: 9px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 18px; height: 18px;
+  display: flex; align-items: center; justify-content: center;
+  border: 2px solid #fff;
+}
+
+#pauly-window {
+  position: fixed;
+  bottom: 105px;
+  right: 28px;
+  width: 370px;
+  max-height: 560px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+  border: 2px solid #003087;
+  display: none;
+  flex-direction: column;
+  z-index: 9999;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+#pauly-window.open { display: flex; }
+
+.pauly-header {
+  background: linear-gradient(to right, #003087, #001f5b);
+  color: #fff;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pauly-avatar {
+  width: 40px; height: 40px;
+  background: #FFD700;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.pauly-header-info { flex: 1; }
+.pauly-header-info .pname { font-weight: bold; font-size: 14px; }
+.pauly-header-info .pstatus { font-size: 11px; color: #a0c4ff; }
+.pauly-close {
+  background: none; border: none; color: #fff; font-size: 20px;
+  cursor: pointer; padding: 0 4px; line-height: 1;
+}
+.pauly-close:hover { color: #FFD700; }
+
+.pauly-subheader {
+  background: #cc0000;
+  color: #fff;
+  text-align: center;
+  font-size: 11px;
+  padding: 4px;
+  font-style: italic;
+}
+
+.pauly-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 10px;
+  background: #f7f9ff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.msg-row { display: flex; align-items: flex-end; gap: 7px; }
+.msg-row.user { flex-direction: row-reverse; }
+.msg-avatar {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px;
+}
+.msg-avatar.bot { background: #003087; color: #FFD700; }
+.msg-avatar.user-av { background: #cc0000; color: #fff; }
+
+.msg-bubble {
+  max-width: 78%;
+  padding: 9px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.msg-bubble.bot {
+  background: #fff;
+  border: 1px solid #ccd9f0;
+  color: #222;
+  border-bottom-left-radius: 3px;
+}
+.msg-bubble.user {
+  background: #003087;
+  color: #fff;
+  border-bottom-right-radius: 3px;
+}
+.msg-bubble a { color: #FFD700; }
+.msg-time { font-size: 10px; color: #999; margin-top: 2px; text-align: right; }
+
+/* Typing indicator */
+.typing-dots { display: flex; gap: 4px; padding: 5px 0; }
+.typing-dots span {
+  width: 8px; height: 8px;
+  background: #003087;
+  border-radius: 50%;
+  animation: bounce 1.2s infinite;
+}
+.typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+.typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes bounce {
+  0%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-6px); }
+}
+
+/* Quick replies */
+.quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+.qr-btn {
+  background: #fff;
+  border: 1.5px solid #003087;
+  color: #003087;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+.qr-btn:hover { background: #003087; color: #fff; }
+
+/* Input area */
+.pauly-intake {
+  padding: 10px 10px 12px;
+  background: #fff;
+  border-top: 1px solid #dde6f5;
+}
+.intake-form { display: flex; flex-direction: column; gap: 7px; }
+.intake-form input, .intake-form textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1.5px solid #ccd9f0;
+  border-radius: 5px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  outline: none;
+}
+.intake-form input:focus, .intake-form textarea:focus { border-color: #003087; }
+.intake-form textarea { height: 55px; resize: none; }
+.intake-form button {
+  background: #003087;
+  color: #FFD700;
+  border: none;
+  padding: 9px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.intake-form button:hover { background: #cc0000; }
+
+.pauly-input-row {
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+}
+.pauly-input-row input {
+  flex: 1;
+  padding: 9px 12px;
+  border: 1.5px solid #ccd9f0;
+  border-radius: 20px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  outline: none;
+}
+.pauly-input-row input:focus { border-color: #003087; }
+.pauly-input-row button {
+  background: #003087;
+  color: #FFD700;
+  border: none;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.pauly-input-row button:hover { background: #cc0000; }
+
+.pauly-footer-note {
+  text-align: center;
+  font-size: 10.5px;
+  color: #999;
+  padding: 4px 0 0;
+}
+
+/* Scrollbar */
+.pauly-messages::-webkit-scrollbar { width: 5px; }
+.pauly-messages::-webkit-scrollbar-track { background: #f0f4ff; }
+.pauly-messages::-webkit-scrollbar-thumb { background: #b0c4e8; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div>📞 +91-3561-XXXXXX &nbsp;|&nbsp; ✉ info@saintpaulsschooljalpaiguri.in &nbsp;|&nbsp; 📍 Netaji Subhas Ch. Bose Rd, Denguajhar, Jalpaiguri, WB - 735121</div>
+  <div><a href="#">Admin Login</a> &nbsp;|&nbsp; <a href="#">Student Portal</a> &nbsp;|&nbsp; <a href="#">Pay Fees Online</a></div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <span class="marquee-inner">
+    📢 Admissions Open for 2026-27 Session – Apply Now &nbsp;|&nbsp; 🏆 Congratulations to Ananya Joshi (Class II-E) for securing 1st Position in District Taekwondo Championship 2026! &nbsp;|&nbsp; 📅 Annual Sports Day – 15th April 2026 &nbsp;|&nbsp; 📝 Annual Examination Schedule for Class X ICSE – Refer Notice Board &nbsp;|&nbsp; 🚌 New Bus Routes Available for Academic Year 2026-27 – Contact Office &nbsp;|&nbsp; 💻 Smart Classrooms fully operational in all sections &nbsp;|&nbsp; 📢 Admissions Open for 2026-27 Session
+  </span>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo-img">
+    <div class="cross">✝</div>
+    <div class="lname">SAINT<br>PAUL'S<br>SCHOOL</div>
+  </div>
+  <div class="school-title">
+    <h1>Saint Paul's School, Jalpaiguri</h1>
+    <h2>Affiliated to CISCE, New Delhi &nbsp;|&nbsp; Estd. 1999</h2>
+    <p>Netaji Subhas Chandra Bose Road, P.O. Denguajhar, Jalpaiguri, West Bengal – 735121</p>
+    <p class="motto">"Serve the Humanity" &nbsp;–&nbsp; School Motto</p>
+  </div>
+  <div class="header-right">
+    <strong>Affiliation No.:</strong> WB-XXX<br>
+    <strong>School Code:</strong> XXXXXXX<br>
+    <strong>Board:</strong> CISCE / ICSE<br>
+    <strong>Type:</strong> Co-Educational<br>
+    <a href="#">📥 Download Prospectus</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="active">🏠 Home</a>
+    <a href="#">About Us</a>
+    <a href="#">Admission</a>
+    <a href="#">Academic</a>
+    <a href="#">Facilities</a>
+    <a href="#">Activities</a>
+    <a href="#">Gallery</a>
+    <a href="#">Notice Board</a>
+    <a href="#">Fee Structure</a>
+    <a href="#">Transport</a>
+    <a href="#">Results</a>
+    <a href="#">Contact Us</a>
+  </div>
+</nav>
+
+<!-- MAIN WRAP -->
+<div class="main-wrap">
+
+  <!-- LEFT SIDEBAR -->
+  <div class="sidebar-left">
+    <div class="sidebar-box">
+      <div class="box-title">📋 Quick Links</div>
+      <ul>
+        <li><a href="#">Admission Form</a></li>
+        <li><a href="#">Fee Payment Online</a></li>
+        <li><a href="#">School App Download</a></li>
+        <li><a href="#">TC / Certificate</a></li>
+        <li><a href="#">Parent Login</a></li>
+        <li><a href="#">Circular / Notice</a></li>
+        <li><a href="#">Result Declaration</a></li>
+        <li><a href="#">School Calendar</a></li>
+        <li><a href="#">CISCE Official Site</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-box">
+      <div class="box-title">📢 Latest Notices</div>
+      <div class="notice-item"><span>NEW</span> Admissions Open 2026-27 – Last date: 30 April 2026</div>
+      <div class="notice-item"><span>IMP</span> Class X Pre-Board Exam: 10–22 April 2026</div>
+      <div class="notice-item">Annual Sports Day – 15 April 2026. All students to participate.</div>
+      <div class="notice-item">Library books return before 5 April 2026.</div>
+      <div class="notice-item"><span>NEW</span> Bus route updated for Siliguri corridor. See office.</div>
+    </div>
+
+    <div class="sidebar-box">
+      <div class="box-title">📅 Upcoming Events</div>
+      <div class="notice-item">🎭 Annual Cultural Function – 20 Apr 2026</div>
+      <div class="notice-item">🏅 Inter-House Quiz – 25 Apr 2026</div>
+      <div class="notice-item">📚 Parent–Teacher Meeting – 3 May 2026</div>
+      <div class="notice-item">🌳 Environment Day Rally – 5 June 2026</div>
+    </div>
+
+    <div class="sidebar-box">
+      <div class="box-title">👥 Visitor Counter</div>
+      <div class="counter-box">
+        <div class="count-num" id="visitor-count">84,217</div>
+        <div class="count-label">Total Visitors</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CENTRE -->
+  <div class="centre">
+
+    <!-- SLIDER -->
+    <div class="slider-wrap">
+      <div class="slider-slides" id="slider">
+        <div class="slide slide-1">
+          <div class="slide-icon">✝🏫</div>
+          <div class="slide-text">Welcome to Saint Paul's School, Jalpaiguri</div>
+          <div class="slide-sub">Affiliated to CISCE, New Delhi &bull; Estd. 1999 &bull; Excellence in Education</div>
+        </div>
+        <div class="slide slide-2">
+          <div class="slide-icon">🎓</div>
+          <div class="slide-text">Admissions Open 2026–27 Session</div>
+          <div class="slide-sub">Nursery to Class X &bull; Limited Seats &bull; Apply Now</div>
+        </div>
+        <div class="slide slide-3">
+          <div class="slide-icon">🏆</div>
+          <div class="slide-text">Nurturing Excellence Since 1999</div>
+          <div class="slide-sub">Smart Classrooms &bull; Science Labs &bull; Sports Facilities &bull; CCTV Campus</div>
+        </div>
+        <div class="slide slide-4">
+          <div class="slide-icon">🤖</div>
+          <div class="slide-text">Meet Pauly AI – Your School Assistant</div>
+          <div class="slide-sub">Ask anything about Admissions, Fees, Facilities & more! Click the chatbot below →</div>
+        </div>
+      </div>
+      <button class="slider-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+      <button class="slider-btn next" onclick="changeSlide(1)">&#10095;</button>
+      <div class="slider-dots" id="slider-dots"></div>
+    </div>
+
+    <!-- STATS ROW -->
+    <div class="stats-row">
+      <div class="stat-box"><div class="sicon">📚</div><div class="snum">2500+</div><div class="slabel">Students Enrolled</div></div>
+      <div class="stat-box"><div class="sicon">👨‍🏫</div><div class="snum">120+</div><div class="slabel">Qualified Faculty</div></div>
+      <div class="stat-box"><div class="sicon">🏆</div><div class="snum">25+</div><div class="slabel">Years of Excellence</div></div>
+      <div class="stat-box"><div class="sicon">📐</div><div class="snum">5 Acres</div><div class="slabel">Campus Area</div></div>
+      <div class="stat-box"><div class="sicon">🚌</div><div class="snum">20+</div><div class="slabel">Bus Routes</div></div>
+    </div>
+
+    <!-- ABOUT + PRINCIPAL -->
+    <div class="content-row">
+      <div class="content-box" style="flex:1.5">
+        <div class="box-title">🏫 About Our School</div>
+        <div class="box-body">
+          <p>Saint Paul's School (SPS) is an English Medium Institution affiliated to CISCE, New Delhi. Established in 1999, the school is open to all irrespective of religion, caste, creed and community. Located on over five acres of established gardens in Denguajhar, Jalpaiguri.</p>
+          <p>The aim of the school is to mould young children for all-round development — academically, physically, mentally and aesthetically — in a homely atmosphere. Values of honesty, integrity and loyalty are instilled in every student along with self-respect, cleanliness and sense of responsibility.</p>
+          <p><a href="#">Read More »</a></p>
+        </div>
+      </div>
+      <div class="content-box" style="flex:1">
+        <div class="box-title">👨‍💼 Principal's Message</div>
+        <div class="box-body">
+          <div class="principal-msg">
+            <div class="principal-photo">
+              <div class="avatar">👨‍💼</div>
+              <div style="font-size:10px;margin-top:4px;">Rev. Fr.<br>Principal</div>
+            </div>
+            <div style="font-size:12.5px;">
+              <p>Dear Students, Parents and Well-wishers,</p>
+              <p style="margin-top:6px;">It gives me immense pleasure to welcome you to Saint Paul's School. We embark on an exciting journey of nurturing young minds, fostering creativity and cultivating a lifelong love for learning...</p>
+              <p style="margin-top:5px;"><a href="#">Read Full Message »</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACADEMICS + FACILITIES -->
+    <div class="content-row">
+      <div class="content-box">
+        <div class="box-title">📖 Academics</div>
+        <div class="box-body">
+          <ul>
+            <li>Nursery / LKG / UKG (Pre-Primary)</li>
+            <li>Classes I to V (Primary Section)</li>
+            <li>Classes VI to VIII (Middle Section)</li>
+            <li>Classes IX to X (Secondary – ICSE)</li>
+            <li>ICSE Board Exam (Class X)</li>
+            <li>Smart Board Classrooms in all sections</li>
+            <li>Well-stocked Library with digital resources</li>
+            <li>Separate Science, Computer & Math Labs</li>
+          </ul>
+        </div>
+      </div>
+      <div class="content-box">
+        <div class="box-title">🏗️ Facilities</div>
+        <div class="box-body">
+          <ul>
+            <li>🖥️ Computer Lab – Desktops, Internet, Printer</li>
+            <li>🔬 Science Laboratories (Physics, Chemistry, Bio)</li>
+            <li>📚 Central Library</li>
+            <li>🎵 Music & Dance Rooms</li>
+            <li>🏋️ Gymnasium & Sports Ground</li>
+            <li>🚌 Transport – 20+ Bus Routes</li>
+            <li>📷 CCTV Surveillance Entire Campus</li>
+            <li>🏥 Medical / Infirmary Room</li>
+            <li>💧 Purified Drinking Water</li>
+          </ul>
+        </div>
+      </div>
+      <div class="content-box">
+        <div class="box-title">🎭 Co-Curricular</div>
+        <div class="box-body">
+          <ul>
+            <li>🏅 Taekwondo, Karate & Sports</li>
+            <li>🎭 Drama & Elocution</li>
+            <li>🎨 Drawing & Painting</li>
+            <li>🎵 Music (Vocal & Instrumental)</li>
+            <li>💃 Classical & Western Dance</li>
+            <li>📰 School Magazine</li>
+            <li>🌿 Yoga & Meditation</li>
+            <li>🤝 Social Service Activities</li>
+            <li>🏆 Inter-School Competitions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- GALLERY -->
+    <div class="full-box">
+      <div class="box-title">🖼️ Photo Gallery</div>
+      <div class="gallery-grid">
+        <div class="gallery-item gi-1" title="Annual Function 2025">🎭</div>
+        <div class="gallery-item gi-2" title="Sports Day">🏃</div>
+        <div class="gallery-item gi-3" title="Science Exhibition">🔬</div>
+        <div class="gallery-item gi-4" title="Republic Day Celebration">🎉</div>
+        <div class="gallery-item gi-5" title="Cultural Programme">🎵</div>
+        <div class="gallery-item gi-6" title="Computer Lab">💻</div>
+        <div class="gallery-item gi-7" title="Library">📚</div>
+        <div class="gallery-item gi-8" title="Taekwondo Championship">🥋</div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <div class="full-box">
+      <div class="box-title">💬 What Parents & Alumni Say</div>
+      <div class="box-body" style="display:flex;gap:15px;flex-wrap:wrap;padding:10px;">
+        <div style="flex:1;min-width:200px;background:#f7f9ff;border-left:3px solid #003087;padding:10px;font-size:12.5px;">
+          <p><em>"The best 13 years of my life were spent here. The school taught me to be a good person, a well-rounded individual. More than marks, I left with gratitude and empathy."</em></p>
+          <p style="margin-top:6px;color:#cc0000;font-weight:bold;">– Ex-Student (Nursery to Class X)</p>
+          <span style="color:#FFD700;">★★★★★</span>
+        </div>
+        <div style="flex:1;min-width:200px;background:#f7f9ff;border-left:3px solid #003087;padding:10px;font-size:12.5px;">
+          <p><em>"Best school in Jalpaiguri. Teachers are very helpful, never tired to uplift students. Strict discipline is maintained. Teaching methods are very impressive."</em></p>
+          <p style="margin-top:6px;color:#cc0000;font-weight:bold;">– Parent of Class VII Student</p>
+          <span style="color:#FFD700;">★★★★★</span>
+        </div>
+        <div style="flex:1;min-width:200px;background:#f7f9ff;border-left:3px solid #003087;padding:10px;font-size:12.5px;">
+          <p><em>"Best infrastructure and best faculty. Each faculty member is helpful. Smart classrooms and labs are excellent. My child loves going to school!"</em></p>
+          <p style="margin-top:6px;color:#cc0000;font-weight:bold;">– Parent of Class IV Student</p>
+          <span style="color:#FFD700;">★★★★★</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT SIDEBAR -->
+  <div class="sidebar-right">
+
+    <div class="sidebar-box">
+      <div class="box-title">📆 Events Calendar</div>
+      <div class="event-item">
+        <div class="ev-date">15 Apr</div>
+        <div class="ev-title">Annual Sports Day</div>
+      </div>
+      <div class="event-item">
+        <div class="ev-date">20 Apr</div>
+        <div class="ev-title">Cultural Function</div>
+      </div>
+      <div class="event-item">
+        <div class="ev-date">25 Apr</div>
+        <div class="ev-title">Inter-House Quiz</div>
+      </div>
+      <div class="event-item">
+        <div class="ev-date">30 Apr</div>
+        <div class="ev-title">Admission Deadline</div>
+      </div>
+      <div class="event-item">
+        <div class="ev-date">03 May</div>
+        <div class="ev-title">Parent-Teacher Meet</div>
+      </div>
+    </div>
+
+    <div class="sidebar-box">
+      <div class="box-title">🔗 Connect With Us</div>
+      <div class="social-links">
+        <a href="#" class="social-btn fb">📘 Facebook</a>
+        <a href="#" class="social-btn yt">▶ YouTube</a>
+        <a href="#" class="social-btn wa">💬 WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="sidebar-box">
+      <div class="box-title">⚡ Quick Access</div>
+      <div class="quicklink-grid">
+        <div class="ql-item"><span class="ql-icon">📝</span>Admission Form</div>
+        <div class="ql-item"><span class="ql-icon">💰</span>Pay Fees</div>
+        <div class="ql-item"><span class="ql-icon">📋</span>Results</div>
+        <div class="ql-item"><span class="ql-icon">🚌</span>Bus Routes</div>
+        <div class="ql-item"><span class="ql-icon">📅</span>Calendar</div>
+        <div class="ql-item"><span class="ql-icon">📞</span>Contact</div>
+      </div>
+    </div>
+
+    <div class="sidebar-box">
+      <div class="box-title">🤖 Pauly AI</div>
+      <div style="padding:10px;text-align:center;font-size:12px;color:#555;line-height:1.6;">
+        <div style="font-size:28px;margin-bottom:6px;">🤖</div>
+        Have questions about admissions, fees, facilities or more?<br><br>
+        <strong style="color:#003087;">Ask Pauly AI!</strong><br>
+        <small style="color:#888;">Our 24×7 school assistant</small><br><br>
+        <button onclick="togglePauly()" style="background:#003087;color:#FFD700;border:none;padding:8px 16px;border-radius:4px;cursor:pointer;font-weight:bold;font-size:12px;">Chat Now ▶</button>
+      </div>
+    </div>
+
+  </div>
+
+</div><!-- end main-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>✝ Saint Paul's School</h4>
+      <p>An English Medium Co-Educational Institution affiliated to CISCE, New Delhi. Dedicated to the all-round development of every child since 1999.</p>
+      <p style="margin-top:8px;"><strong style="color:#FFD700;">School Motto:</strong> "Serve the Humanity"</p>
+    </div>
+    <div class="footer-col">
+      <h4>📍 Contact Us</h4>
+      <ul>
+        <li>Netaji S.C. Bose Rd, Paharpur</li>
+        <li>P.O. Denguajhar, Jalpaiguri</li>
+        <li>West Bengal – 735121</li>
+        <li>📞 +91-3561-XXXXXX</li>
+        <li>✉ info@saintpaulsschooljalpaiguri.in</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>🔗 Important Links</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Admission Process</a></li>
+        <li><a href="#">Fee Structure</a></li>
+        <li><a href="#">Transport / Bus Routes</a></li>
+        <li><a href="#">CISCE Official Website</a></li>
+        <li><a href="#">RTI / Mandatory Disclosure</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>📘 Sections</h4>
+      <ul>
+        <li><a href="#">Pre-Primary (Nursery–UKG)</a></li>
+        <li><a href="#">Primary (Class I–V)</a></li>
+        <li><a href="#">Middle School (VI–VIII)</a></li>
+        <li><a href="#">Secondary (IX–X / ICSE)</a></li>
+        <li><a href="#">Academic Calendar</a></li>
+        <li><a href="#">School Magazine</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Saint Paul's School, Jalpaiguri. All rights reserved. &nbsp;|&nbsp; Affiliated to CISCE, New Delhi &nbsp;|&nbsp; Website maintained by School IT Department &nbsp;|&nbsp; <a href="#" style="color:#FFD700;">Privacy Policy</a>
+  </div>
+</footer>
+
+<!-- ============================================================ -->
+<!--                    PAULY AI CHATBOT                          -->
+<!-- ============================================================ -->
+
+<!-- Toggle Button -->
+<div id="pauly-toggle" onclick="togglePauly()" title="Chat with Pauly AI">
+  <div class="bot-icon">🤖</div>
+  <div class="bot-label">Pauly AI</div>
+  <div class="pauly-badge" id="pauly-badge">1</div>
+</div>
+
+<!-- Chat Window -->
+<div id="pauly-window">
+  <div class="pauly-header">
+    <div class="pauly-avatar">🤖</div>
+    <div class="pauly-header-info">
+      <div class="pname">Pauly AI</div>
+      <div class="pstatus">🟢 Online – St. Paul's School Assistant</div>
+    </div>
+    <button class="pauly-close" onclick="togglePauly()">✕</button>
+  </div>
+  <div class="pauly-subheader">Ask me about Admissions, Fees, Classes, Facilities & more!</div>
+
+  <div class="pauly-messages" id="pauly-messages">
+    <!-- Messages injected by JS -->
+  </div>
+
+  <div class="pauly-intake" id="pauly-input-area">
+    <!-- Input injected by JS -->
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<script>
+// ---- SLIDER ----
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const dotsContainer = document.getElementById('slider-dots');
+
+slides.forEach((_, i) => {
+  const d = document.createElement('div');
+  d.className = 'dot' + (i === 0 ? ' active' : '');
+  d.onclick = () => goToSlide(i);
+  dotsContainer.appendChild(d);
+});
+
+function goToSlide(n) {
+  currentSlide = (n + slides.length) % slides.length;
+  document.getElementById('slider').style.transform = `translateX(-${currentSlide * 100}%)`;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+}
+function changeSlide(dir) { goToSlide(currentSlide + dir); }
+setInterval(() => changeSlide(1), 4500);
+
+// ---- VISITOR COUNTER ----
+let vc = 84217;
+setInterval(() => {
+  vc += Math.floor(Math.random() * 3);
+  document.getElementById('visitor-count').textContent = vc.toLocaleString('en-IN');
+}, 8000);
+
+// ---- PAULY AI CHATBOT ----
+let paulyOpen = false;
+let chatStage = 'greeting'; // greeting → collect_name → collect_phone → chat
+let userInfo = { name: '', phone: '' };
+let conversationHistory = [];
+
+const SCHOOL_KNOWLEDGE = `
+You are Pauly AI, the friendly and helpful chatbot assistant for Saint Paul's School, Jalpaiguri. You help parents, students and visitors with queries about the school.
+
+SCHOOL INFORMATION:
+- Name: Saint Paul's School, Jalpaiguri (SPS)
+- Established: 1999
+- Affiliation: CISCE, New Delhi (ICSE Board)
+- Type: Co-Educational, English Medium, Day School
+- Location: Netaji Subhas Chandra Bose Road, P.O. Denguajhar, Jalpaiguri, West Bengal – 735121
+- Email: info@saintpaulsschooljalpaiguri.in
+- Motto: "Serve the Humanity"
+- Campus: Over 5 acres of established gardens
+
+CLASSES OFFERED:
+- Nursery, LKG, UKG (Pre-Primary)
+- Class I to V (Primary Section)
+- Class VI to VIII (Middle Section)
+- Class IX to X (ICSE Board Examination)
+
+ADMISSION PROCESS:
+- Admissions are open for the 2026-27 session
+- Application forms available at school office
+- Admission based on merit in written test and viva-voce
+- Documents required: Date of Birth Certificate, Transfer Certificate (for classes II onwards), last year's report card, 2 stamp-size photographs, Baptism Certificate (for Catholic students only)
+- Admission fee once paid is non-refundable
+- Contact school office for admission test dates and syllabus
+- Age: Children between 3 to 3.5 years as on 1st July are eligible for Nursery
+
+FEE STRUCTURE (approximate):
+- Nursery/LKG/UKG: Registration ₹500 (non-refundable), Admission Fee approx ₹3,000–5,000, Monthly Fee approx ₹800–1,200
+- Class I–V: Monthly Fee approx ₹1,200–1,800, Annual Fee approx ₹4,000–6,000
+- Class VI–VIII: Monthly Fee approx ₹1,800–2,500, Annual Fee approx ₹5,000–8,000
+- Class IX–X: Monthly Fee approx ₹2,500–3,500, Annual Fee approx ₹8,000–12,000
+- Online fee payment available through the school app (Android & iOS)
+- For exact fee structure, please contact the school office or visit in person
+
+FACILITIES:
+- Smart Board Classrooms in all sections with internet connectivity
+- Science Laboratories (Physics, Chemistry, Biology)
+- Computer Lab with desktops, internet, printer
+- Central Library with books and digital resources
+- Music Room, Dance Room
+- Gymnasium and sprawling Sports Ground
+- 20+ School Bus Routes covering Jalpaiguri and surrounding areas
+- CCTV surveillance across entire campus
+- Infirmary/Medical Room with periodic health checkups
+- Purified drinking water
+- Separate washrooms for boys and girls
+- Cafeteria/Canteen
+
+BUS SERVICE / TRANSPORT:
+- 20+ bus routes covering Jalpaiguri city and surrounding areas
+- New routes available for 2026-27 academic year
+- Contact school office for route details and bus fee
+- Bus fee is charged separately from tuition fee
+- Parents can enquire about routes at the school office
+
+CO-CURRICULAR ACTIVITIES / EXTRACURRICULAR:
+- Taekwondo, Karate (competitive level – students have won district championships)
+- Drama & Elocution
+- Drawing & Painting
+- Music (Vocal and Instrumental)
+- Classical & Western Dance
+- School Annual Magazine
+- Yoga & Meditation
+- Social Service Activities
+- Inter-school and district-level competitions
+- Annual Sports Day, Cultural Functions
+- Science Exhibition, Quiz Competitions
+
+ACADEMIC DETAILS:
+- Board: ICSE (Indian Certificate of Secondary Education) under CISCE
+- School curriculum encourages curiosity, innovative thinking and independent learning
+- Teaching methodology: Smart boards, project-based learning, collaborative learning
+- Focus on all-round development – academic, physical, mental, aesthetic
+
+UNIFORM:
+- School uniform mandatory for all students
+- Black shoes with laces and dark brown nylon socks
+- School belt compulsory for all classes
+- White canvas shoes on Saturday/Games day
+- Track suit for Sports/PT days (house color)
+
+SCHOOL TIMINGS:
+- School generally runs from approximately 8:00 AM to 2:30 PM (Monday–Saturday)
+- Contact school office for exact timings by section
+
+CONTACT:
+- Email: info@saintpaulsschooljalpaiguri.in
+- Website: www.saintpaulsschooljalpaiguri.in
+- Phone: Contact school office during working hours (Mon–Sat, 8 AM – 2 PM)
+- Address: Netaji S.C. Bose Rd, Paharpur, P.O. Denguajhar, Jalpaiguri, WB – 735121
+
+IMPORTANT NOTES:
+- Always be warm, friendly and helpful
+- Address the user by their first name when possible
+- Keep responses concise but complete
+- For very specific fee queries, always recommend contacting the school office for exact figures
+- When the user has finished queries, offer to submit their query to the school email
+- You represent Saint Paul's School – be professional, warm and school-appropriate
+`;
+
+function togglePauly() {
+  paulyOpen = !paulyOpen;
+  const win = document.getElementById('pauly-window');
+  win.classList.toggle('open', paulyOpen);
+  document.getElementById('pauly-badge').style.display = 'none';
+  if (paulyOpen && conversationHistory.length === 0) {
+    initChat();
+  }
+}
+
+function initChat() {
+  const msgs = document.getElementById('pauly-messages');
+  msgs.innerHTML = '';
+  chatStage = 'collect_name';
+  addBotMessage("👋 Hello! Welcome to <strong>Saint Paul's School, Jalpaiguri</strong>!<br><br>I'm <strong>Pauly AI</strong>, your 24×7 school assistant. I can help you with admissions, fees, classes, facilities, bus routes and more!<br><br>Before we begin, may I know your <strong>name</strong> please? 😊");
+  showTextInput("Enter your full name...", handleName);
+}
+
+function addBotMessage(html, quickReplies = []) {
+  const msgs = document.getElementById('pauly-messages');
+  const now = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+  // Typing animation first
+  const typingRow = document.createElement('div');
+  typingRow.className = 'msg-row';
+  typingRow.innerHTML = `<div class="msg-avatar bot">🤖</div><div class="msg-bubble bot"><div class="typing-dots"><span></span><span></span><span></span></div></div>`;
+  msgs.appendChild(typingRow);
+  msgs.scrollTop = msgs.scrollHeight;
+
+  setTimeout(() => {
+    typingRow.remove();
+    const row = document.createElement('div');
+    row.className = 'msg-row';
+    let qrHtml = '';
+    if (quickReplies.length) {
+      qrHtml = `<div class="quick-replies">${quickReplies.map(q => `<button class="qr-btn" onclick="handleQuickReply('${q}')">${q}</button>`).join('')}</div>`;
+    }
+    row.innerHTML = `
+      <div class="msg-avatar bot">🤖</div>
+      <div>
+        <div class="msg-bubble bot">${html}${qrHtml}</div>
+        <div class="msg-time">Pauly AI • ${now}</div>
+      </div>`;
+    msgs.appendChild(row);
+    msgs.scrollTop = msgs.scrollHeight;
+  }, 900);
+}
+
+function addUserMessage(text) {
+  const msgs = document.getElementById('pauly-messages');
+  const now = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  const row = document.createElement('div');
+  row.className = 'msg-row user';
+  row.innerHTML = `
+    <div class="msg-avatar user-av">👤</div>
+    <div>
+      <div class="msg-bubble user">${text}</div>
+      <div class="msg-time" style="text-align:left;">${now}</div>
+    </div>`;
+  msgs.appendChild(row);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function showTextInput(placeholder, handler) {
+  const area = document.getElementById('pauly-input-area');
+  area.innerHTML = `
+    <div class="pauly-input-row">
+      <input type="text" id="pauly-text-input" placeholder="${placeholder}" onkeypress="if(event.key==='Enter'){handleInputSubmit()}" />
+      <button onclick="handleInputSubmit()">➤</button>
+    </div>
+    <div class="pauly-footer-note">Powered by Pauly AI • Saint Paul's School</div>`;
+  window._currentHandler = handler;
+  setTimeout(() => document.getElementById('pauly-text-input')?.focus(), 100);
+}
+
+function handleInputSubmit() {
+  const input = document.getElementById('pauly-text-input');
+  if (!input) return;
+  const val = input.value.trim();
+  if (!val) return;
+  input.value = '';
+  window._currentHandler(val);
+}
+
+function handleName(name) {
+  userInfo.name = name;
+  addUserMessage(name);
+  chatStage = 'collect_phone';
+  setTimeout(() => {
+    addBotMessage(`Nice to meet you, <strong>${name}</strong>! 😊<br><br>Could you please share your <strong>phone number</strong> so the school can contact you if needed?`);
+    showTextInput("Enter your phone number...", handlePhone);
+  }, 300);
+}
+
+function handlePhone(phone) {
+  if (!/^[6-9]\d{9}$/.test(phone.replace(/\s/g, ''))) {
+    addUserMessage(phone);
+    addBotMessage("Hmm, that doesn't look like a valid Indian mobile number. Please enter your 10-digit phone number. 📱");
+    showTextInput("Enter 10-digit phone number...", handlePhone);
+    return;
+  }
+  userInfo.phone = phone;
+  addUserMessage(phone);
+  chatStage = 'chat';
+  conversationHistory = [];
+  setTimeout(() => {
+    addBotMessage(`Thank you, <strong>${userInfo.name}</strong>! 🎉<br><br>I'm all set to help you. What would you like to know about <strong>Saint Paul's School, Jalpaiguri</strong>?`,
+      ['Admissions', 'Fee Structure', 'Classes Offered', 'Bus Service', 'Facilities', 'Extracurricular', 'Contact Info']);
+    showChatInput();
+  }, 300);
+}
+
+function handleQuickReply(text) {
+  addUserMessage(text);
+  askClaude(text);
+}
+
+function showChatInput() {
+  const area = document.getElementById('pauly-input-area');
+  area.innerHTML = `
+    <div class="pauly-input-row">
+      <input type="text" id="pauly-chat-input" placeholder="Type your question here..." onkeypress="if(event.key==='Enter'){sendChat()}" />
+      <button onclick="sendChat()">➤</button>
+    </div>
+    <div class="pauly-footer-note">Powered by Pauly AI • Saint Paul's School</div>`;
+  setTimeout(() => document.getElementById('pauly-chat-input')?.focus(), 100);
+}
+
+function sendChat() {
+  const input = document.getElementById('pauly-chat-input');
+  if (!input) return;
+  const val = input.value.trim();
+  if (!val) return;
+  input.value = '';
+  addUserMessage(val);
+  askClaude(val);
+}
+
+async function askClaude(userText) {
+  // Add to history
+  conversationHistory.push({ role: 'user', content: userText });
+
+  // Check for submit/email intent
+  const submitIntent = /submit|send|email|contact school|forward|enquiry form/i.test(userText);
+
+  const msgs = document.getElementById('pauly-messages');
+
+  // Show typing
+  const typingRow = document.createElement('div');
+  typingRow.className = 'msg-row';
+  typingRow.innerHTML = `<div class="msg-avatar bot">🤖</div><div class="msg-bubble bot"><div class="typing-dots"><span></span><span></span><span></span></div></div>`;
+  msgs.appendChild(typingRow);
+  msgs.scrollTop = msgs.scrollHeight;
+
+  try {
+    const systemPrompt = `${SCHOOL_KNOWLEDGE}
+
+The user's name is ${userInfo.name} and phone number is ${userInfo.phone}. 
+Use their first name occasionally to keep the conversation warm and personal.
+Keep responses helpful, concise (2-4 sentences max per point), and formatted nicely with line breaks.
+Do not use markdown headers. Use bold sparingly. 
+Always offer quick reply suggestions at the end when relevant.
+Return your response as JSON: { "message": "your response html here", "quickReplies": ["option1", "option2"] }
+QuickReplies should be 2-4 short follow-up options relevant to the conversation.
+Only respond in JSON, no other text.`;
+
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: systemPrompt,
+        messages: conversationHistory
+      })
+    });
+
+    const data = await response.json();
+    typingRow.remove();
+
+    let aiText = data.content?.[0]?.text || '{}';
+    let parsed;
+    try {
+      aiText = aiText.replace(/```json|```/g, '').trim();
+      parsed = JSON.parse(aiText);
+    } catch (e) {
+      parsed = { message: aiText, quickReplies: ['Admissions', 'Fee Structure', 'Contact Info'] };
+    }
+
+    conversationHistory.push({ role: 'assistant', content: parsed.message || aiText });
+
+    const now = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const row = document.createElement('div');
+    row.className = 'msg-row';
+    let qrHtml = '';
+    if (parsed.quickReplies?.length) {
+      qrHtml = `<div class="quick-replies">${parsed.quickReplies.map(q => `<button class="qr-btn" onclick="handleQuickReply('${q}')">${q}</button>`).join('')}</div>`;
+    }
+
+    // Add submit button if relevant
+    let submitBtn = '';
+    if (conversationHistory.length >= 4) {
+      submitBtn = `<div style="margin-top:10px;"><button onclick="submitEnquiry()" style="background:#cc0000;color:#fff;border:none;padding:6px 14px;border-radius:4px;font-size:12px;cursor:pointer;font-weight:bold;">📧 Submit Enquiry to School</button></div>`;
+    }
+
+    row.innerHTML = `
+      <div class="msg-avatar bot">🤖</div>
+      <div>
+        <div class="msg-bubble bot">${parsed.message || aiText}${qrHtml}${submitBtn}</div>
+        <div class="msg-time">Pauly AI • ${now}</div>
+      </div>`;
+    msgs.appendChild(row);
+    msgs.scrollTop = msgs.scrollHeight;
+
+  } catch (err) {
+    typingRow.remove();
+    addBotMessage("I'm having trouble connecting right now. Please try again or contact the school directly at <strong>info@saintpaulsschooljalpaiguri.in</strong> 📧");
+  }
+}
+
+function submitEnquiry() {
+  const summary = conversationHistory
+    .map(m => `${m.role === 'user' ? userInfo.name : 'Pauly AI'}: ${m.content.replace(/<[^>]*>/g, '')}`)
+    .join('\n');
+
+  const subject = `Website Enquiry from ${userInfo.name} – Pauly AI Chat`;
+  const body = `Dear Saint Paul's School Team,\n\nThe following enquiry was received via the Pauly AI chatbot on the school website:\n\nName: ${userInfo.name}\nPhone: ${userInfo.phone}\n\n--- Chat Summary ---\n${summary}\n\nPlease follow up with the visitor at your earliest convenience.\n\nRegards,\nPauly AI – Saint Paul's School Website`;
+
+  const mailtoLink = `mailto:info@stpaulschool.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.open(mailtoLink, '_blank');
+
+  addBotMessage(`✅ <strong>Enquiry Submitted!</strong><br><br>Your chat summary has been sent to the school at <strong>info@stpaulschool.in</strong>. The team will contact you at <strong>${userInfo.phone}</strong> shortly.<br><br>Thank you for reaching out, <strong>${userInfo.name}</strong>! 😊 Is there anything else I can help you with?`,
+    ['More Questions', 'Fee Details', 'Admission Process']);
+}
+</script>
+
+</body>
+</html>
